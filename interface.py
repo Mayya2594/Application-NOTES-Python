@@ -21,7 +21,7 @@ def interface():
             print("Список всех заметок:")
             print_notes(notes)
         elif choice == "3":
-            print_one_note
+            print_one_note()
         elif choice == "4":
             notes = read_notes_from_file()
             print_filtered_by_date(notes)

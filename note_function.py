@@ -46,7 +46,7 @@ def print_one_note():
             print("Заметка выведена.\n")
             check = True
     if check == False:
-        print("Не существует заметки с указанным идентификатором.")
+        print("Не существует заметки с указанным идентификатором.\n")
 
 # Вывод списка заметок с фильтром по дате
 def print_filtered_by_date(notes):
@@ -59,7 +59,7 @@ def print_filtered_by_date(notes):
         if (date[:10] >= start_date) and (date[:10] <= final_date):
             filtered_notes.append(note)
     if filtered_notes == []:
-        print("Нет заметок за указанный период")
+        print("Нет заметок за указанный период.\n")
     else:
         print("Список заметок:")
         print_notes(filtered_notes)
@@ -95,7 +95,7 @@ def delete_note():
             check = True
     
     if check == False:
-        print("Не существует заметки с указанным идентификатором")
+        print("Не существует заметки с указанным идентификатором.\n")
     
     with open("notes.json", "w") as file:
         for note in notes:
