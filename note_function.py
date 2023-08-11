@@ -22,3 +22,12 @@ def read_notes_from_file():
             notes.append(json.loads(line))
     return notes
 
+# Вывод списка всех заметок на экран
+def print_notes(notes):
+    for note in notes:
+        print("Id: ", note["id"])
+        print("Заголовок: ", note["title"])
+        print("Дата/время: ", note["date"])
+        print("Текст: ", note["text"])
+        print("---------------")
+
