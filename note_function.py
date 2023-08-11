@@ -58,7 +58,7 @@ def print_filtered_by_date(notes):
         date = ("".join([note["date"]]))
         if (date[:10] >= start_date) and (date[:10] <= final_date):
             filtered_notes.append(note)
-    if filtered_notes == []
+    if filtered_notes == []:
         print("Нет заметок за указанный период")
     else:
         print("Список заметок:")
