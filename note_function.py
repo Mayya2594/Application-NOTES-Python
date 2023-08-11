@@ -47,3 +47,19 @@ def print_one_note():
             check = True
     if check == False:
         print("Не существует заметки с указанным идентификатором.")
+
+# Вывод списка заметок с фильтром по дате
+def print_filtered_by_date(notes):
+    filtered_notes = []
+    start_date = input("Введите начальную дату: ")
+    final_date = input("Введите конечную дату: ")
+    date = []
+    for note in notes:
+        date = ("".join([note["date"]]))
+        if (date[:10] >= start_date) and (date[:10] <= final_date):
+            filtered_notes.append(note)
+    if filtered_notes == []
+        print("Нет заметок за указанный период")
+    else:
+        print("Список заметок:")
+        print_notes(filtered_notes)
