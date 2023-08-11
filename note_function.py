@@ -81,3 +81,22 @@ def edit_note():
     with open("notes.json", "w") as file:
         for note in notes:
             file.write(json.dumps(note) + "\n")
+
+# Удаление заметки
+def delete_note():
+    note_id = input("Введите идентификатор заметки для удаления: ")
+    check = False
+    notes = read_notes_from_file()
+
+    for i, note in enumerate(notes):
+        if note["id"] == note_id:
+            del notes[i]
+            print("Заметка удалена.\n")
+            check = True
+    
+    if check == False:
+        print("Не существует заметки с указанным идентификатором")
+    
+    with open("notes.json", "w") as file:
+        for note in notes:
+            file.write(json.dumps(note) + "\n")
