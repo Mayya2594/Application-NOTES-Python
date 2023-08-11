@@ -8,3 +8,8 @@ def create_note():
     note_text = input("Введите текст заметки: ")
     note_date = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     return {"id": note_id, "title": note_title, "text": note_text, "date": note_date}
+
+# Сохранение заметки в файл
+def save_note_to_file(note):
+    with open("notes.json", "a") as file:
+        file.write(json.dumps(note) + "\n")
