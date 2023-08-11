@@ -31,3 +31,19 @@ def print_notes(notes):
         print("Текст: ", note["text"])
         print("---------------")
 
+# Вывод одной заметки на экран
+def print_one_note():
+    note_id = input("Введите идентификатор заметки для вывода: ")
+    notes = read_notes_from_file()
+    check = False
+
+    for note in notes:
+        if note["id"] == note_id:
+            print("Id: ", note["id"])
+            print("Заголовок: ", note["title"])
+            print("Дата/время: ", note["date"])
+            print("Текст: ", note["text"])
+            print("Заметка выведена.\n")
+            check = True
+    if check == False:
+        print("Не существует заметки с указанным идентификатором.")
