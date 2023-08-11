@@ -13,3 +13,12 @@ def create_note():
 def save_note_to_file(note):
     with open("notes.json", "a") as file:
         file.write(json.dumps(note) + "\n")
+
+# Чтение заметок из файла
+def read_notes_from_file():
+    notes = []
+    with open("notes.json", "r") as file:
+        for line in file:
+            notes.append(json.loads(line))
+    return notes
+
