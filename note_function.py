@@ -63,3 +63,21 @@ def print_filtered_by_date(notes):
     else:
         print("Список заметок:")
         print_notes(filtered_notes)
+        
+# Редактирование заметки
+def edit_note():
+    note_id = input("Введите идентификатор заметки для редактирования: ")
+    check = False
+
+    notes = read_notes_from_file()
+    for i, note in enumerate(notes):
+        if note["id"] == note_id:
+            notes[i] = create_note()
+            print("Заметка отредактирована.\n")
+            check = True
+    if check == False:
+        print("Не существует заметки с указанным идентификатором.")
+
+    with open("notes.json", "w") as file:
+        for note in notes:
+            file.write(json.dumps(note) + "\n")
